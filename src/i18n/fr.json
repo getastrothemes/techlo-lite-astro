@@ -1,0 +1,86 @@
+{
+  "common": {
+    "readMore": "Lire plus",
+    "readBlog": "Lire l'article",
+    "viewDetails": "Voir détails",
+    "viewService": "Voir service",
+    "readMoreAbout": "En savoir plus sur",
+    "learnMore": "Voir plus",
+    "learnMoreAbout": "En savoir plus sur",
+    "emailPlaceholder": "Adresse e-mail",
+    "paginationPrevious": "Précédent",
+    "paginationNext": "Suivant",
+    "home": "Accueil",
+    "tab": "Onglet"
+  },
+  "aria": {
+    "breadcrumb": "Fil d'Ariane",
+    "closeModal": "Fermer la fenêtre",
+    "closeOffcanvas": "Fermer le menu latéral",
+    "footer": "Pied de page",
+    "menu": "Menu",
+    "offcanvas": "Panneau latéral",
+    "openSidebarContent": "Ouvrir le contenu du menu latéral",
+    "pagination": "Pagination",
+    "playVideo": "Lire la vidéo",
+    "services": "Services",
+    "starRating": "Note de 5 étoiles",
+    "tabs": "Onglets",
+    "toggleNavigation": "Afficher/masquer la navigation"
+  },
+  "widgets": {
+    "searchTitle": "Rechercher",
+    "postSearchFormPlaceholder": "Rechercher des analyses, des services ou des guides...",
+    "searchInputPlaceholder": "Saisissez votre recherche...",
+    "categoriesTitle": "Catégories",
+    "tagsTitle": "Tags",
+    "recentPostsTitle": "Articles récents"
+  },
+  "form": {
+    "choose": "Choisir",
+    "fallbackLabel": "Veuillez définir un libellé",
+    "fallbackName": "Veuillez définir une valeur de nom",
+    "fallbackPlaceholder": "Veuillez définir un texte indicatif",
+    "invalidSelect": "Veuillez sélectionner une option valide.",
+    "sendMessage": "Envoyer",
+    "validSelect": "Parfait !",
+    "submitting": "Envoi du formulaire...",
+    "unknownProvider": "Fournisseur de formulaire inconnu.",
+    "submissionFallback": "Veuillez utiliser l'adresse e-mail de contact configurée pour soumettre une demande."
+  },
+  "notFound": {
+    "title": "Page introuvable",
+    "heading": "Oups, cette page est introuvable",
+    "description": "La page que vous recherchez est introuvable. Vérifiez l'URL et réessayez, ou revenez à la page d'accueil.",
+    "buttonLabel": "Retour à l'accueil"
+  },
+  "headerOffcanvas": {
+    "description": "Nous aidons les équipes à moderniser leur infrastructure, à sécuriser les systèmes critiques et à lancer des produits numériques plus faciles à faire évoluer et à maintenir.",
+    "addressLabel": "Adresse",
+    "contactLabel": "Contact"
+  },
+  "blog": {
+    "authorPrefix": "Par",
+    "category": "Catégorie",
+    "tagsLabel": "Tags :",
+    "share": "Partager :",
+    "paginationPrevious": "Précédent",
+    "paginationNext": "Suivant"
+  },
+  "navigation": {
+    "buttonLabel": "Nous contacter"
+  },
+  "select": {
+    "loading": "Chargement...",
+    "noResults": "Aucun résultat trouvé",
+    "searchPlaceholder": "Rechercher..."
+  },
+  "footer": {
+    "description": "Nous accompagnons les organisations en croissance pour planifier, concevoir, sécuriser et maintenir des systèmes technologiques fiables au service de leurs activités quotidiennes.",
+    "quickLinksTitle": "Liens rapides",
+    "servicesTitle": "Services",
+    "informationTitle": "Informations",
+    "copyright": "Copyright © 2026 Your Company. Tous droits réservés.",
+    "_comment": "Footer text matches the default footer design. Update this value if the product copyright changes."
+  }
+}

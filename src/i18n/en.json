@@ -1,0 +1,86 @@
+{
+  "common": {
+    "readMore": "Read More",
+    "readBlog": "Read Blog",
+    "viewDetails": "View Details",
+    "viewService": "View Service",
+    "readMoreAbout": "Read more about",
+    "learnMore": "Learn More",
+    "learnMoreAbout": "Learn more about",
+    "emailPlaceholder": "Email Address",
+    "paginationPrevious": "Previous",
+    "paginationNext": "Next",
+    "home": "Home",
+    "tab": "Tab"
+  },
+  "aria": {
+    "breadcrumb": "Breadcrumb",
+    "closeModal": "Close modal",
+    "closeOffcanvas": "Close sidebar",
+    "footer": "Footer",
+    "menu": "Menu",
+    "offcanvas": "Sidebar panel",
+    "openSidebarContent": "Open sidebar content",
+    "pagination": "Pagination",
+    "playVideo": "Play video",
+    "services": "Services",
+    "starRating": "5 star rating",
+    "tabs": "Tabs",
+    "toggleNavigation": "Toggle navigation"
+  },
+  "widgets": {
+    "searchTitle": "Search",
+    "postSearchFormPlaceholder": "Search insights, services, or guides...",
+    "searchInputPlaceholder": "Type to search...",
+    "categoriesTitle": "Categories",
+    "tagsTitle": "Tags",
+    "recentPostsTitle": "Recent Posts"
+  },
+  "form": {
+    "choose": "Choose",
+    "fallbackLabel": "Please set label",
+    "fallbackName": "Please set name value",
+    "fallbackPlaceholder": "Please set placeholder",
+    "invalidSelect": "Please select a valid option.",
+    "sendMessage": "Send Message",
+    "validSelect": "Perfect!",
+    "submitting": "Form submitting...",
+    "unknownProvider": "Unknown form provider.",
+    "submissionFallback": "Please use the configured contact email to submit a ticket."
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "heading": "Oops, this page is not found",
+    "description": "The page you're looking for can't be found. Double-check the URL and try again, or return to the homepage.",
+    "buttonLabel": "Back to Homepage"
+  },
+  "headerOffcanvas": {
+    "description": "We help teams modernize infrastructure, secure critical systems, and launch digital products that are easier to scale and maintain.",
+    "addressLabel": "Address",
+    "contactLabel": "Contact"
+  },
+  "blog": {
+    "authorPrefix": "By",
+    "category": "Category",
+    "tagsLabel": "Tags:",
+    "share": "Share:",
+    "paginationPrevious": "Previous Post",
+    "paginationNext": "Next Post"
+  },
+  "navigation": {
+    "buttonLabel": "Get in Touch"
+  },
+  "select": {
+    "loading": "Loading...",
+    "noResults": "No results found",
+    "searchPlaceholder": "Search..."
+  },
+  "footer": {
+    "description": "We partner with growing organizations to plan, build, secure, and support reliable technology systems for everyday business operations.",
+    "quickLinksTitle": "Quick Links",
+    "servicesTitle": "Services",
+    "informationTitle": "Information",
+    "copyright": "Copyright © 2026 Your Company. All rights reserved.",
+    "_comment": "Footer text matches the default footer design. Update this value if the product copyright changes."
+  }
+}

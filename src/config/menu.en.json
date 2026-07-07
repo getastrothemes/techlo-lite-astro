@@ -1,0 +1,145 @@
+{
+  "header": [
+    {
+      "enable": true,
+      "name": "Home",
+      "url": "/"
+    },
+    {
+      "enable": true,
+      "name": "Services",
+      "url": "/services/",
+      "hasChildren": true,
+      "children": [
+        {
+          "enable": true,
+          "name": "All Services",
+          "url": "/services/"
+        },
+        {
+          "enable": true,
+          "name": "Web & Mobile App Development",
+          "url": "/services/service-02/"
+        },
+        {
+          "enable": true,
+          "name": "UI/UX & Branding Identity",
+          "url": "/services/service-05/"
+        },
+        {
+          "enable": true,
+          "name": "Digital Marketing",
+          "url": "/services/service-03/"
+        },
+        {
+          "enable": true,
+          "name": "Cyber Security Solutions",
+          "url": "/services/service-06/"
+        },
+        {
+          "enable": true,
+          "name": "Cloud Migration & DevOps",
+          "url": "/services/service-07/"
+        }
+      ]
+    },
+    {
+      "enable": true,
+      "name": "Blog",
+      "url": "/blog/"
+    },
+    {
+      "enable": true,
+      "name": "Team",
+      "url": "/team/"
+    }
+  ],
+  "footer": [
+    {
+      "label": "Quick Links",
+      "list": [
+        {
+          "enable": true,
+          "name": "Our Team",
+          "url": "/team/",
+          "active": true
+        },
+        {
+          "enable": true,
+          "name": "Blogs",
+          "url": "/blog/"
+        },
+        {
+          "enable": true,
+          "name": "About Us",
+          "url": "#"
+        },
+        {
+          "enable": true,
+          "name": "Careers",
+          "url": "#"
+        },
+        {
+          "enable": true,
+          "name": "Contact",
+          "url": "#"
+        }
+      ]
+    },
+    {
+      "label": "Services",
+      "list": [
+        {
+          "enable": true,
+          "name": "UI/UX Design",
+          "url": "/services/service-05/"
+        },
+        {
+          "enable": true,
+          "name": "App Development",
+          "url": "/services/service-02/"
+        },
+        {
+          "enable": true,
+          "name": "Digital Marketing",
+          "url": "/services/service-03/"
+        },
+        {
+          "enable": true,
+          "name": "Web Development",
+          "url": "/services/service-02/"
+        },
+        {
+          "enable": true,
+          "name": "Cyber Security",
+          "url": "/services/service-06/"
+        }
+      ]
+    },
+    {
+      "label": "Company",
+      "list": [
+        {
+          "enable": true,
+          "name": "All Services",
+          "url": "/services/"
+        },
+        {
+          "enable": true,
+          "name": "Latest Posts",
+          "url": "/blog/"
+        },
+        {
+          "enable": true,
+          "name": "Terms & Conditions",
+          "url": "/terms-conditions/"
+        },
+        {
+          "enable": true,
+          "name": "Privacy Policy",
+          "url": "/privacy-policy/"
+        }
+      ]
+    }
+  ]
+}

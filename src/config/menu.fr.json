@@ -1,0 +1,145 @@
+{
+  "header": [
+    {
+      "enable": true,
+      "name": "Accueil",
+      "url": "/"
+    },
+    {
+      "enable": true,
+      "name": "Services",
+      "url": "/services/",
+      "hasChildren": true,
+      "children": [
+        {
+          "enable": true,
+          "name": "Tous les services",
+          "url": "/services/"
+        },
+        {
+          "enable": true,
+          "name": "Développement web et mobile",
+          "url": "/services/service-02/"
+        },
+        {
+          "enable": true,
+          "name": "UI/UX et identité de marque",
+          "url": "/services/service-05/"
+        },
+        {
+          "enable": true,
+          "name": "Marketing digital",
+          "url": "/services/service-03/"
+        },
+        {
+          "enable": true,
+          "name": "Solutions de cybersécurité",
+          "url": "/services/service-06/"
+        },
+        {
+          "enable": true,
+          "name": "Migration cloud et DevOps",
+          "url": "/services/service-07/"
+        }
+      ]
+    },
+    {
+      "enable": true,
+      "name": "Blog",
+      "url": "/blog/"
+    },
+    {
+      "enable": true,
+      "name": "Équipe",
+      "url": "/team/"
+    }
+  ],
+  "footer": [
+    {
+      "label": "Liens rapides",
+      "list": [
+        {
+          "enable": true,
+          "name": "Notre équipe",
+          "url": "/team/",
+          "active": true
+        },
+        {
+          "enable": true,
+          "name": "Blog",
+          "url": "/blog/"
+        },
+        {
+          "enable": true,
+          "name": "À propos",
+          "url": "#"
+        },
+        {
+          "enable": true,
+          "name": "Carrières",
+          "url": "#"
+        },
+        {
+          "enable": true,
+          "name": "Contact",
+          "url": "#"
+        }
+      ]
+    },
+    {
+      "label": "Services",
+      "list": [
+        {
+          "enable": true,
+          "name": "Design UI/UX",
+          "url": "/services/service-05/"
+        },
+        {
+          "enable": true,
+          "name": "Développement d'applications",
+          "url": "/services/service-02/"
+        },
+        {
+          "enable": true,
+          "name": "Marketing digital",
+          "url": "/services/service-03/"
+        },
+        {
+          "enable": true,
+          "name": "Développement web",
+          "url": "/services/service-02/"
+        },
+        {
+          "enable": true,
+          "name": "Cybersécurité",
+          "url": "/services/service-06/"
+        }
+      ]
+    },
+    {
+      "label": "Entreprise",
+      "list": [
+        {
+          "enable": true,
+          "name": "Tous les services",
+          "url": "/services/"
+        },
+        {
+          "enable": true,
+          "name": "Derniers articles",
+          "url": "/blog/"
+        },
+        {
+          "enable": true,
+          "name": "Conditions générales",
+          "url": "/terms-conditions/"
+        },
+        {
+          "enable": true,
+          "name": "Politique de confidentialité",
+          "url": "/privacy-policy/"
+        }
+      ]
+    }
+  ]
+}
