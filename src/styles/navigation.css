@@ -1,0 +1,370 @@
+/* Header */
+.site-header-wrap {
+  @apply relative z-30 w-full;
+
+  &.has-sticky-behavior {
+    @apply sticky top-0 transition-all duration-500;
+  }
+
+  &.is-topbar-hidden .topbar {
+    @apply pointer-events-none max-h-0 overflow-hidden py-0! opacity-0;
+  }
+
+  .topbar {
+    @apply max-h-40 overflow-hidden transition-all duration-500;
+  }
+
+  &.scroll-down {
+    @apply pointer-events-none opacity-0;
+  }
+
+  &.scroll-up {
+    @apply pointer-events-auto opacity-100;
+  }
+
+  &.scroll-down .hs-dropdown-menu.mega-menu {
+    @apply pointer-events-none!;
+  }
+
+  &.scroll-up .hs-dropdown-menu.mega-menu {
+    @apply pointer-events-auto;
+  }
+
+  &.scroll-up .header:not(.has-dark-background) {
+    @apply bg-white backdrop-blur-lg;
+  }
+
+  &.scroll-up .header.has-dark-background {
+    @apply bg-theme-dark backdrop-blur-lg;
+  }
+}
+
+/* Language Switcher */
+.language-switcher {
+  @apply relative;
+
+  .language-switcher-button {
+    @apply btn text-text-default flex items-center gap-2 px-2 py-0;
+
+    span.text {
+      @apply -me-2 inline-block font-normal capitalize;
+    }
+    svg * {
+      @apply stroke-current!;
+    }
+  }
+
+  .language-switcher-dropdown {
+    @apply hs-dropdown-open:opacity-100 absolute inset-e-0 top-[calc(100%+0.5rem)] min-w-32 opacity-0 transition-[opacity,margin];
+
+    li a {
+      @apply text-text-default hover:bg-primary border-border-dark block rounded-sm! border bg-white py-2 text-center font-normal! transition-colors duration-300 hover:border-white hover:text-white;
+    }
+  }
+}
+.header.has-dark-background .language-switcher {
+  .language-switcher-button {
+    @apply text-white;
+  }
+}
+
+/* === Common Navbar Base Styles === */
+.navbar {
+  /* Base layout */
+  @apply flex max-h-[80vh] lg:relative lg:items-center lg:bg-transparent;
+
+  &.navbar-right {
+    @apply lg:me-16 lg:ml-auto;
+  }
+  &.navbar-left {
+    @apply lg:ms-0 lg:me-auto;
+  }
+  &:not(.navbar-right):not(.navbar-left) {
+    @apply lg:mx-auto;
+  }
+
+  /* Mobile overlay behavior */
+  @apply max-lg:hs-dropdown-open:opacity-100 max-lg:top-full max-lg:z-40 max-lg:hidden max-lg:w-full max-lg:flex-col max-lg:space-y-1 max-lg:border max-lg:bg-white max-lg:p-2 max-lg:opacity-0 max-lg:transition-[opacity,margin];
+
+  .nav-item {
+    @apply relative;
+    > .nav-link {
+      @apply flex items-center rounded-full px-3 py-1.5 font-normal transition-all duration-300 sm:px-6 lg:px-4 lg:py-2 xl:px-6;
+    }
+  }
+
+  .nav-link {
+    @apply text-dark hs-dropdown-open:text-primary hover:text-primary hover:bg-primary/5! [&.nav-dropdown-link]:hover:bg-primary/10;
+  }
+  .nav-dropdown-link {
+    @apply text-dark hover:text-primary [&.active]:text-primary;
+  }
+
+  /* Regular Dropdown */
+  [data-icon="arrow-down"] *,
+  [data-icon="arrow-right"] * {
+    @apply stroke-current!;
+  }
+
+  .nav-dropdown {
+    .nav-dropdown-toggle {
+      @apply cursor-pointer select-none;
+
+      svg {
+        @apply inline-block;
+      }
+    }
+
+    .nav-dropdown-chevron {
+      @apply ms-2 size-4 shrink-0 transition duration-300;
+    }
+
+    &.open > .nav-dropdown-toggle {
+      @apply text-primary;
+    }
+
+    &.open
+      > .nav-dropdown-toggle
+      .nav-dropdown-chevron[data-icon="arrow-down"] {
+      @apply rotate-180;
+    }
+
+    &.open
+      > .nav-dropdown-toggle
+      .nav-dropdown-chevron[data-icon="arrow-right"] {
+      @apply translate-x-1;
+    }
+
+    .nav-dropdown-list {
+      @apply lg:shadow-card-hover z-10 min-w-65 rounded-2xl border bg-white py-4 ps-7 pe-5 max-lg:static! max-lg:transform-none!;
+
+      .nav-dropdown-item {
+        .nav-dropdown-link {
+          @apply flex min-h-10 items-center justify-between gap-4 rounded-md text-base leading-6 font-normal transition duration-300;
+        }
+        .nav-dropdown-list {
+          @apply px-7 py-4;
+        }
+      }
+    }
+
+    .nav-dropdown-list-scroll {
+      max-height: min(90vh, calc(100vh - 2rem));
+      max-height: min(90dvh, calc(100dvh - 2rem));
+    }
+  }
+
+  /* Show navbar on click on small devices */
+  &.expanded {
+    @apply translate-x-0 translate-y-0 max-lg:visible;
+  }
+}
+.navbar-mobile {
+  @apply flex min-h-fit border-0 p-0 opacity-100 lg:hidden;
+  .nav-link {
+    @apply ps-0! hover:bg-transparent!;
+  }
+}
+
+/* Dark Header Variant */
+.header.has-dark-background {
+  @apply bg-theme-dark;
+  .nav-link {
+    @apply hs-dropdown-open:text-white hs-dropdown-open:bg-white/10 text-white hover:bg-white/10!;
+  }
+}
+
+.header.header-transparent {
+  @apply bg-transparent;
+
+  .nav-link {
+    @apply hs-dropdown-open:text-white hs-dropdown-open:bg-white/10 text-white hover:bg-white/10!;
+  }
+
+  .logo-wrapper .logo-text {
+    @apply text-white;
+  }
+}
+
+/* Badge */
+.navbar .badge {
+  @apply relative inline-block rounded-full;
+
+  &:not(.badge-dot) {
+    @apply relative ms-3 inline-block px-2 py-1 text-xs! font-normal;
+  }
+
+  &.badge-dot {
+    @apply absolute -inset-e-3 top-1 h-1.5 w-1.5 rounded-full lg:-top-1;
+  }
+
+  &.badge-primary {
+    @apply bg-primary text-light;
+
+    &.badge-dot {
+      @apply bg-primary;
+    }
+  }
+
+  &.badge-info {
+    @apply bg-blue-100 text-blue-800;
+
+    &.badge-dot {
+      @apply bg-blue-400;
+    }
+  }
+
+  &.badge-accent {
+    @apply bg-purple-100 text-purple-800;
+
+    &.badge-dot {
+      @apply bg-purple-400;
+    }
+  }
+
+  &.badge-success {
+    @apply bg-emerald-100 text-emerald-800;
+
+    &.badge-dot {
+      @apply bg-emerald-400;
+    }
+  }
+
+  &.badge-danger {
+    @apply bg-rose-100 text-rose-800;
+
+    &.badge-dot {
+      @apply bg-rose-400;
+    }
+  }
+}
+
+/* Changing Badges That Appearing badly On Dark Header */
+header.has-dark-background .navbar .badge {
+  &.badge-primary {
+    @apply bg-primary text-light;
+  }
+
+  &.badge-info {
+    @apply bg-blue-300;
+  }
+
+  &.badge-accent {
+    @apply bg-purple-300;
+  }
+
+  &.badge-success {
+    @apply bg-emerald-700 text-emerald-100;
+  }
+
+  &.badge-danger {
+    @apply bg-rose-600 text-rose-50;
+  }
+}
+
+/* Logo */
+.logo-wrapper {
+  @apply flex items-center gap-2;
+
+  .logo {
+    @apply flex items-center gap-x-4;
+  }
+
+  .logo-text {
+    @apply font-semibold tracking-wider sm:text-3xl;
+  }
+
+  .logo-alternate {
+    @apply hidden;
+  }
+}
+
+/* Hide alternate logo */
+header {
+  .logo {
+    @apply hidden;
+  }
+
+  .logo-text {
+    @apply text-dark;
+  }
+
+  /* Show main logo in home page and alternate logo in other pages */
+  &.header-dark {
+    .logo {
+      @apply inline-block;
+    }
+
+    .logo-text {
+      @apply text-white;
+    }
+
+    .logo-alternate {
+      @apply hidden;
+    }
+  }
+}
+
+/* Show main logo in footer */
+footer {
+  .logo-text {
+    @apply text-h4 text-dark;
+  }
+
+  .logo-alternate {
+    @apply hidden;
+  }
+
+  &.footer-dark {
+    @apply bg-theme-dark text-light;
+
+    .logo-alternate {
+      @apply inline-block!;
+    }
+
+    .logo-text,
+    .footer-heading,
+    .footer-link.active {
+      @apply text-white!;
+    }
+
+    .footer-description,
+    .footer-link,
+    .footer-copyright {
+      @apply text-light!;
+    }
+
+    .footer-link {
+      @apply hover:text-white!;
+    }
+
+    .footer-bottom {
+      @apply border-border-dark!;
+    }
+
+    .footer-social a {
+      @apply hover:bg-primary! bg-white/10! text-white!;
+    }
+  }
+}
+
+.header.has-dark-background .logo-wrapper {
+  .logo-text {
+    @apply text-white;
+  }
+}
+
+.nav-toggler {
+  &.nav-toggler-dark {
+    @apply bg-theme-dark text-white;
+  }
+  &.nav-toggler-light {
+    @apply bg-theme-light text-text-default;
+  }
+}
+
+.header-transparent .nav-toggler {
+  &.nav-toggler-light {
+    @apply bg-white/10 text-white;
+  }
+}

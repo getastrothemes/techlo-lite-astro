@@ -1,0 +1,20 @@
+<svg data-icon="true" class="text-primary/35 pointer-events-none absolute top-0 left-0 h-56 w-48"
+  perspective="none" width="189" height="228" viewBox="0 0 189 228" fill="none"
+  xmlns="http://www.w3.org/2000/svg">
+  <g opacity="0.2">
+    <rect x="36.6985" y="-48.6965" width="61.867" height="61.867"
+      transform="rotate(90 36.6985 -48.6965)" fill="white" stroke="#BCD4FF" stroke-width="0.661596"></rect>
+    <rect x="13.9602" y="39.9812" width="61.867" height="61.867"
+      transform="rotate(90 13.9602 39.9812)" fill="white" stroke="#BCD4FF" stroke-width="0.661596"></rect>
+    <rect x="99.2258" y="13.8288" width="61.867" height="61.867"
+      transform="rotate(90 99.2258 13.8288)" fill="white" stroke="#BCD4FF" stroke-width="0.661596"></rect>
+    <rect x="76.4876" y="102.509" width="61.867" height="61.867"
+      transform="rotate(90 76.4876 102.509)" fill="white" stroke="#BCD4FF" stroke-width="0.661596"></rect>
+    <rect x="187.904" y="-12.3176" width="61.867" height="61.867"
+      transform="rotate(90 187.904 -12.3176)" fill="white" stroke="#BCD4FF" stroke-width="0.661596"></rect>
+    <rect x="161.753" y="76.362" width="61.867" height="61.867"
+      transform="rotate(90 161.753 76.362)" fill="white" stroke="#BCD4FF" stroke-width="0.661596"></rect>
+    <rect x="139.019" y="165.036" width="61.867" height="61.867"
+      transform="rotate(90 139.019 165.036)" fill="white" stroke="#BCD4FF" stroke-width="0.661596"></rect>
+  </g>
+</svg>

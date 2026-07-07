@@ -1,0 +1,103 @@
+@utility centered-items {
+  @apply flex items-center justify-center;
+}
+
+/* Custom Scrollbar */
+@utility has-customized-scrollbar {
+  @apply [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:bg-gray-300 [&::-webkit-scrollbar-track]:bg-white;
+}
+
+@utility has-customized-scrollbar-dark {
+  @apply [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:bg-white/10 [&::-webkit-scrollbar-track]:bg-transparent;
+}
+
+@utility box-shadow-black {
+  @apply shadow-black/5;
+  box-shadow: 0px 0px 80px var(--tw-shadow-color);
+}
+
+@utility translate-centered {
+  @apply top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+}
+
+@utility translate-y-centered {
+  @apply top-1/2 -translate-y-1/2;
+}
+
+@utility translate-x-centered {
+  @apply left-1/2 -translate-x-1/2;
+}
+
+@utility stretched-link {
+  @apply relative before:absolute before:inset-0;
+}
+
+@utility container-2xl {
+  @apply max-w-400;
+}
+
+@utility h1 {
+  @apply text-h1;
+}
+
+@utility h2 {
+  @apply text-h2;
+}
+
+@utility h3 {
+  @apply text-h3;
+}
+
+@utility h4 {
+  @apply text-h4;
+}
+
+@utility h5 {
+  @apply text-h5;
+}
+
+@utility h6 {
+  @apply text-h6;
+}
+
+@utility section-spacing {
+  @apply pt-16 lg:pt-20 xl:pt-24;
+}
+@utility section-spacing-vertical {
+  @apply py-16 lg:py-20 xl:py-24;
+}
+@utility section-spacing-lg-vertical {
+  @apply py-20 lg:py-28 xl:py-44;
+}
+
+/* For debug */
+/* ------------------------------------ */
+@utility bb-dd {
+  @apply border-primary border-2 border-dashed;
+}
+@utility bb {
+  * {
+    @apply border-primary border border-dashed;
+  }
+}
+
+/* Section Background Shape */
+@utility has-bg-shape {
+  @apply after:bg-theme-light relative pb-20 after:absolute after:inset-s-0 after:bottom-0 after:-z-10 after:h-5/6 after:w-full md:pb-32;
+}
+
+@utility clip-about-shape {
+  clip-path: url("#about-clip-path-1-x");
+}
+
+@utility clip-rounded-shape-a {
+  clip-path: url("#rounded-shape-a");
+}
+
+@utility flip-horizontal {
+  transform: scaleX(-1);
+}
+
+@utility flip-vertical {
+  transform: scaleY(-1);
+}

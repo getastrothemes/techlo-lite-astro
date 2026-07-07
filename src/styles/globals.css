@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@import "./theme.css";
+@plugin "../plugins/fontTailwindPlugin.js";
+
+/* Preline UI */
+/* Preline v4.2 ships a strict `exports` map that omits the CSS files, so the
+   variants stylesheet is referenced by a root-absolute path (resolved from the
+   filesystem) rather than a package specifier that the exports map would block. */
+@import "../../node_modules/preline/variants.css";
+@source "../../node_modules/preline/dist/*.js";
+
+@plugin "@tailwindcss/forms";
+@plugin "@tailwindcss/typography";
+@import "./safe.css";
+
+/* Defaults hover styles on all devices */
+@custom-variant hover (&:hover);
+
+@layer base {
+  @import "./base.css";
+}
+
+@layer components {
+  @import "./animation.css";
+  @import "./navigation.css";
+  @import "./components.css";
+}

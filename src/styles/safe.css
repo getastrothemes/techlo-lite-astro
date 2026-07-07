@@ -1,0 +1,219 @@
+@import "./buttons.css";
+@import "./utilities.css";
+
+form {
+  @apply prose-a:text-primary prose-a:underline prose-a:underline-offset-2;
+}
+
+form.contact-form {
+  @apply prose-a:text-primary prose-a:underline prose-a:underline-offset-2;
+}
+
+.contact-form {
+  @apply grid grid-cols-2 gap-6;
+}
+
+.contact-form-field {
+  @apply relative flex flex-col;
+}
+
+.contact-form-field--half {
+  @apply max-sm:col-span-2 md:col-span-1;
+}
+
+.contact-form-field--full,
+.contact-form-submit,
+.contact-form-message,
+.contact-form-note {
+  @apply col-span-2;
+}
+
+.contact-form-field-label {
+  @apply text-dark/70 mb-4 text-base font-medium;
+}
+
+.contact-form-control-shell {
+  @apply border-border-dark/20 relative w-full border-b transition-colors duration-200;
+}
+
+.contact-form-field:focus-within .contact-form-control-shell,
+.contact-form-field.is-filled .contact-form-control-shell,
+.contact-form-field:focus-within .contact-form-choice-group,
+.contact-form-field.is-filled .contact-form-choice-group {
+  @apply border-primary;
+}
+
+.contact-form-field.is-error .contact-form-control-shell,
+.contact-form-field.is-error .contact-form-choice-group {
+  @apply border-red-500;
+}
+
+.contact-form-control {
+  @apply text-dark placeholder:text-text-default/70 w-full border-none bg-transparent px-0 pt-2 pb-4 ring-0 outline-none focus:ring-0 focus:outline-none;
+  caret-color: var(--color-dark);
+}
+
+.contact-form-control--textarea {
+  @apply resize-none;
+}
+
+.contact-form-native-select {
+  @apply pointer-events-none absolute inset-0 h-full w-full opacity-0;
+  appearance: none;
+}
+
+.contact-form-native-control {
+  @apply cursor-pointer appearance-none;
+}
+
+.contact-form-choice-group {
+  @apply border-border-dark/20 relative flex flex-col gap-3 border-b pb-4;
+}
+
+.contact-form-choice-item {
+  @apply flex items-center gap-3;
+}
+
+.contact-form-choice-input {
+  @apply border-primary/40 bg-body text-primary focus:border-primary checked:border-primary checked:bg-primary mt-0 shrink-0 cursor-pointer appearance-none border transition-colors duration-200 focus:ring-0 focus:ring-offset-0;
+}
+
+.contact-form-choice-input--radio {
+  @apply checked:ring-primary/20 size-4 rounded-full checked:ring-2;
+}
+
+.contact-form-choice-input--checkbox {
+  @apply checked:ring-primary/20 size-5 rounded-sm checked:ring-2;
+}
+
+.contact-form-choice-label {
+  @apply text-text-default cursor-pointer text-sm;
+}
+
+.contact-form-choice-label a {
+  @apply underline underline-offset-2;
+}
+
+.contact-form-select-shell .hs-select {
+  @apply w-full;
+}
+
+.contact-form-select-toggle {
+  @apply text-dark relative flex w-full cursor-pointer items-center gap-x-2 border-none bg-transparent px-0 pt-2 pb-4 text-left shadow-none ring-0 outline-none focus:ring-0 focus:outline-none;
+}
+
+.contact-form-select-title {
+  @apply text-text-default/70 transition-colors;
+}
+
+.contact-form-field:focus-within .contact-form-select-title,
+.contact-form-field.is-filled .contact-form-select-title {
+  @apply text-dark;
+}
+
+.contact-form-field.is-error .contact-form-select-title,
+.contact-form-field.is-error .contact-form-select-arrow {
+  @apply text-red-500;
+}
+
+.contact-form-select-dropdown {
+  @apply bg-body border-border-light shadow-dark/10 z-20 mt-2 max-h-72 w-full overflow-y-auto border shadow-xl;
+}
+
+.contact-form-select-option {
+  @apply text-text-default hover:text-dark hover:bg-theme-light focus:bg-theme-light w-full cursor-pointer px-4 py-2 focus:outline-none;
+}
+
+.contact-form-select-option-inner {
+  @apply flex w-full items-center justify-between;
+}
+
+.contact-form-select-selected-icon {
+  @apply text-primary;
+}
+
+.contact-form-select-arrow {
+  @apply text-text-default/70 pointer-events-none absolute inset-y-0 right-0 flex items-center transition-colors;
+}
+
+.contact-form-select-search-wrap {
+  @apply bg-body sticky top-0 p-1;
+}
+
+.contact-form-select-search {
+  @apply bg-body text-dark placeholder:text-text-default/60 border-border-light focus:border-primary block w-full px-3 py-2 text-sm focus:ring-0;
+}
+
+.contact-form-message {
+  @apply rounded-md border px-4 py-3 text-sm shadow-lg shadow-black/10;
+}
+
+.contact-form-message.hidden {
+  @apply hidden;
+}
+
+.contact-form-message--pending {
+  @apply border-primary/30 bg-primary/10 text-dark;
+}
+
+.contact-form-message--success {
+  @apply border-emerald-400/35 bg-emerald-400/10 text-emerald-950;
+}
+
+.contact-form-message--error {
+  @apply border-red-400/35 bg-red-400/10 text-red-950;
+}
+
+.contact-form-message-content {
+  @apply prose-p:my-0 prose-a:text-current prose-a:underline prose-a:underline-offset-2;
+}
+
+.contact-form-note {
+  @apply prose-a:text-primary prose-a:underline prose-a:underline-offset-2 flex flex-col text-sm/normal;
+}
+
+.contact-form-control:-webkit-autofill,
+.contact-form-control:-webkit-autofill:hover,
+.contact-form-control:-webkit-autofill:focus,
+.contact-form-select-search:-webkit-autofill,
+.contact-form-select-search:-webkit-autofill:hover,
+.contact-form-select-search:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--color-dark) !important;
+  -webkit-box-shadow: 0 0 0 1000px var(--color-body) inset !important;
+  box-shadow: 0 0 0 1000px var(--color-body) inset !important;
+  caret-color: var(--color-dark);
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+.form-input {
+  @apply text-dark placeholder:text-text-default bg-body focus:bg-body h-full w-full border-transparent p-4 outline-0 placeholder:opacity-70 focus:shadow-none! focus:ring-0!;
+}
+
+/* ----------------------------
+   SVG Icon Color Matching
+   Automatically replace fill/stroke with brand color
+----------------------------- */
+[data-icon]:not(.match-brand-color),
+.has-inherited-colors {
+  & [stroke]:not([stroke="none"]):not(defs *):not(mask *):not(clipPath *) {
+    stroke: currentColor !important;
+  }
+
+  & [fill]:not([fill="none"]):not([fill="white"]):not(rect) {
+    fill: currentColor !important;
+  }
+}
+
+.match-brand-color {
+  *[fill*="#2562FF"] {
+    @apply fill-primary!;
+  }
+
+  *[stroke*="#2562FF"] {
+    @apply stroke-primary!;
+  }
+
+  *[stop-color="#2562FF"] {
+    stop-color: var(--color-primary) !important;
+  }
+}

@@ -1,0 +1,79 @@
+/* prettier-ignore */
+@theme inline {
+  /* Configure base font size, type scale, and font families in `src/config/fonts.json` */
+  --leading-body: 1.8;
+  --leading-inherit: inherit;
+
+  /* Brand colors */
+  --color-primary: #2B4DFF;
+  --color-primary-soft: #EEF1FF;
+  --color-accent: #e3ff04;
+
+  /* Decorative gradient colors */
+  --color-gradient-blush: #E176CA;
+  --color-gradient-warm: #FBDE90;
+
+  /* Surface colors */
+  --color-body: #fff;
+  --color-body-dark: #070800;
+  --color-theme-dark: #040D43;
+  --color-theme-light: #F5F6F7;
+
+  /* Content colors */
+  --color-dark: #0A165E;
+  --color-light: #CED0DF;
+  --color-text-default: #585B6F;
+
+  /* Border colors */
+  --color-border-light: #e5e5e5;
+  --color-border-dark: #272F5D;
+
+  /* Screen */
+  --breakpoint-*: initial;
+  --breakpoint-sm: 540px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1320px;
+
+  /* Typography */
+  --text-base: 1rem;
+  --text-base-scale: 1.23;
+  --text-base-sm: calc(var(--text-base) * 0.9);
+
+  --text-display-1: calc(var(--text-base) * pow(var(--text-base-scale), 8.8)); /* 115px  */
+  --text-display-2: calc(var(--text-base) * pow(var(--text-base-scale), 8)); /* 95px  */
+  --text-display-3: calc(var(--text-base) * pow(var(--text-base-scale), 7.25)); /* 80px  */
+  --text-display-4: calc(var(--text-base) * pow(var(--text-base-scale), 6.5)); /* 65px  */
+  --text-display-5: calc(var(--text-base) * pow(var(--text-base-scale), 5.5)); /* 50px  */
+  --text-display-6: calc(var(--text-base) * pow(var(--text-base-scale), 4.5)); /* 40px  */
+
+  --text-h1: calc(var(--text-base) * pow(var(--text-base-scale), 6));
+  --text-h2: calc(var(--text-base) * pow(var(--text-base-scale), 5));
+  --text-h3: calc(var(--text-base) * pow(var(--text-base-scale), 4));
+  --text-h4: calc(var(--text-base) * pow(var(--text-base-scale), 3));
+  --text-h5: calc(var(--text-base) * pow(var(--text-base-scale), 2));
+  --text-h6: calc(var(--text-base) * pow(var(--text-base-scale), 1));
+
+  /* Mobile type scale: controlled via --text-base-sm */
+  --text-h1-sm: calc(var(--text-base-sm) * pow(var(--text-base-scale), 6));
+  --text-h2-sm: calc(var(--text-base-sm) * pow(var(--text-base-scale), 5));
+  --text-h3-sm: calc(var(--text-base-sm) * pow(var(--text-base-scale), 4));
+  --text-h4-sm: calc(var(--text-base-sm) * pow(var(--text-base-scale), 3));
+  --text-h5-sm: calc(var(--text-base-sm) * pow(var(--text-base-scale), 2));
+  --text-h6-sm: calc(var(--text-base-sm) * pow(var(--text-base-scale), 1));
+
+  --aspect-blog-card-image: 104 / 85;
+  --shadow-card-hover: 0px 12px 40px 4px color-mix(in srgb, var(--color-dark) 8%, transparent);
+
+  --aspect-team-card-image: 51 / 55;
+
+  /* Project overlay cards keep a stable crop without fixed heights. */
+  --aspect-project-card: 1 / 1;
+}
+
+/* Extra-small mobile tuning: tweak only --text-base-sm */
+@media (max-width: 340px) {
+  :root {
+    --text-base-sm: calc(var(--text-base) * 0.8);
+  }
+}

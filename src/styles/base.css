@@ -1,0 +1,140 @@
+html {
+  @apply text-sm xl:text-base;
+}
+
+html:not(.lenis) {
+  @apply scroll-smooth;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis:not(.lenis-autoToggle).lenis-stopped {
+  overflow: clip;
+}
+
+.lenis [data-lenis-prevent],
+.lenis [data-lenis-prevent-wheel],
+.lenis [data-lenis-prevent-touch],
+.lenis [data-lenis-prevent-vertical],
+.lenis [data-lenis-prevent-horizontal] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+.lenis.lenis-autoToggle {
+  transition-duration: 1ms;
+  transition-property: overflow;
+  transition-behavior: allow-discrete;
+}
+
+body {
+  @apply bg-body font-primary text-text-default leading-body font-normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  @apply border-border-light;
+}
+
+/* Global Section Spacing */
+main section {
+  @apply section-spacing;
+}
+
+/* Add CTA spacing only when the last page section does not already provide spacing */
+main:not(
+    :has(
+      > section:last-of-type:where(
+          [class~="section-spacing"],
+          [class*="section-spacing-"]
+        ),
+      > section:last-of-type
+        :where([class~="section-spacing"], [class*="section-spacing-"])
+    )
+  )
+  + section.cta-section {
+  @apply section-spacing;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply text-dark leading-snug font-bold tracking-wide wrap-break-word;
+
+  br {
+    @apply max-md:hidden;
+  }
+}
+
+h1 {
+  @apply text-h1-sm md:text-h1;
+}
+
+h2 {
+  @apply text-h2-sm md:text-h2;
+}
+
+h3 {
+  @apply text-h3-sm md:text-h3;
+}
+
+h4 {
+  @apply text-h4-sm md:text-h4;
+}
+
+h5 {
+  @apply text-h5;
+}
+
+h6 {
+  @apply text-h6;
+}
+
+b,
+strong {
+  @apply text-dark/80;
+}
+
+code {
+  @apply after:border-none;
+}
+
+a {
+  @apply transition-colors duration-300;
+}
+
+p {
+  br {
+    @apply max-md:hidden;
+  }
+}
+
+button:not(:disabled),
+[role="button"]:not(:disabled) {
+  cursor: pointer;
+}
+
+/* Remove default outline but only when we replace it */
+*:focus {
+  outline: none;
+}
+
+/* Apply custom focus style */
+*:focus-visible {
+  border-color: rgba(100, 116, 139, 0.6); /* softer slate */
+  box-shadow: 0 0 0 1px rgba(100, 116, 139, 0.3);
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}

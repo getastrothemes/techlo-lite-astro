@@ -1,0 +1,676 @@
+/* Scroll reveal animations */
+/* --------------------------------- */
+
+.banner-text-reveal {
+  opacity: 0;
+  animation: banner-text-reveal 900ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  will-change: opacity, transform, filter, clip-path;
+}
+
+.banner-text-reveal-left {
+  clip-path: inset(0 100% 0 0);
+  transform: translate3d(-1rem, 0, 0);
+}
+
+.banner-text-reveal-right {
+  clip-path: inset(0 0 0 100%);
+  transform: translate3d(1rem, 0, 0);
+  animation-delay: 180ms;
+}
+
+@keyframes banner-text-reveal {
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.banner-one-section {
+  --banner-one-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.banner-one-title-wrap {
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  clip-path: inset(0 100% 0 0);
+  filter: blur(14px);
+  transform: perspective(70rem) rotateX(10deg) translate3d(-2rem, 1rem, 0);
+  animation: banner-one-title-in 1200ms var(--banner-one-ease) forwards;
+  will-change: opacity, transform, filter, clip-path;
+}
+
+.banner-one-title-wrap::after {
+  position: absolute;
+  inset: -0.5rem -2rem;
+  pointer-events: none;
+  content: "";
+  background: linear-gradient(
+    100deg,
+    transparent 15%,
+    rgba(255, 255, 255, 0.3) 45%,
+    transparent 75%
+  );
+  transform: translateX(-120%) skewX(-14deg);
+  animation: banner-one-title-sweep 1100ms var(--banner-one-ease) 520ms forwards;
+}
+
+.banner-one-title {
+  transform-origin: left bottom;
+  animation: banner-one-title-settle 1400ms var(--banner-one-ease) forwards;
+}
+
+.banner-one-copy-wrap {
+  opacity: 0;
+  filter: blur(16px);
+  transform: translate3d(2rem, 1rem, 0);
+  animation: banner-one-content-in 950ms var(--banner-one-ease) 240ms forwards;
+  will-change: opacity, transform, filter;
+}
+
+.banner-one-description {
+  animation: banner-one-subtle-drift 8s ease-in-out 1400ms infinite alternate;
+}
+
+.banner-one-actions {
+  opacity: 0;
+  transform: translate3d(0, 1rem, 0);
+  animation: banner-one-actions-in 850ms var(--banner-one-ease) 620ms forwards;
+  will-change: opacity, transform;
+}
+
+.banner-one-dot-field {
+  opacity: 0;
+  animation:
+    banner-one-dot-in 900ms ease 250ms forwards,
+    banner-one-dot-drift 16s ease-in-out 1200ms infinite alternate;
+  will-change: opacity, filter;
+}
+
+.banner-one-dot-field-delay {
+  animation-delay: 420ms, 1600ms;
+}
+
+.banner-one-image-stage {
+  opacity: 0;
+  clip-path: inset(12% 10% 12% 10% round 1.5rem);
+  filter: blur(18px);
+  transform: perspective(80rem) rotateX(6deg) rotateY(-5deg)
+    translate3d(0, 2rem, 0) scale(0.96);
+  animation: banner-one-image-stage-in 1300ms var(--banner-one-ease) 420ms
+    forwards;
+  transform-origin: center bottom;
+  will-change: opacity, transform, filter, clip-path;
+}
+
+.banner-one-image {
+  animation: banner-one-image-float 9s ease-in-out 1800ms infinite alternate;
+  will-change: transform;
+}
+
+.banner-one-image-dot {
+  opacity: 0;
+  animation:
+    banner-one-dot-in 700ms ease 850ms forwards,
+    banner-one-image-dot-drift 12s ease-in-out 1500ms infinite alternate;
+  will-change: opacity, transform;
+}
+
+.banner-one-image-dot-reverse {
+  animation-name: banner-one-dot-in, banner-one-image-dot-drift-reverse;
+}
+
+.banner-one-customers {
+  opacity: 0;
+  transform: translate3d(0, 1.5rem, 0);
+  animation: banner-one-content-in 900ms var(--banner-one-ease) 900ms forwards;
+  will-change: opacity, transform, filter;
+}
+
+@keyframes banner-one-title-in {
+  to {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+    filter: blur(0);
+    transform: perspective(70rem) rotateX(0) translate3d(0, 0, 0);
+  }
+}
+
+@keyframes banner-one-title-sweep {
+  to {
+    transform: translateX(120%) skewX(-14deg);
+  }
+}
+
+@keyframes banner-one-title-settle {
+  0% {
+    transform: scale(0.98);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes banner-one-content-in {
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes banner-one-actions-in {
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes banner-one-dot-in {
+  to {
+    opacity: 0.8;
+  }
+}
+
+@keyframes banner-one-dot-drift {
+  from {
+    opacity: 0.55;
+    filter: blur(0);
+  }
+
+  to {
+    opacity: 0.85;
+    filter: blur(1px);
+  }
+}
+
+@keyframes banner-one-image-stage-in {
+  to {
+    opacity: 1;
+    clip-path: inset(0 0 0 0 round 0);
+    filter: blur(0);
+    transform: perspective(80rem) rotateX(0) rotateY(0) translate3d(0, 0, 0)
+      scale(1);
+  }
+}
+
+@keyframes banner-one-image-float {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  to {
+    transform: translate3d(0, -0.75rem, 0) scale(1.01);
+  }
+}
+
+@keyframes banner-one-image-dot-drift {
+  from {
+    transform: translate3d(0, 0, 0) rotate(180deg) scale(1.25);
+  }
+
+  to {
+    transform: translate3d(0.75rem, -0.75rem, 0) rotate(186deg) scale(1.28);
+  }
+}
+
+@keyframes banner-one-image-dot-drift-reverse {
+  from {
+    transform: translate3d(0, 0, 0) rotate(180deg) scale(1.25);
+  }
+
+  to {
+    transform: translate3d(-0.75rem, 0.75rem, 0) rotate(174deg) scale(1.28);
+  }
+}
+
+@keyframes banner-one-subtle-drift {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(0, -0.25rem, 0);
+  }
+}
+
+.banner-two-section {
+  --banner-two-ease: var(--banner-two-easing, cubic-bezier(0.22, 1, 0.36, 1));
+}
+
+.banner-two-map {
+  opacity: 0;
+  transform: translate3d(1.5rem, 1rem, 0) scale(1.03);
+  animation:
+    banner-two-map-in var(--banner-two-map-duration, 1200ms)
+      var(--banner-two-ease) 120ms forwards,
+    banner-two-map-drift 16s ease-in-out 1400ms infinite alternate;
+  will-change: opacity, transform;
+}
+
+.banner-two-eyebrow,
+.banner-two-heading,
+.banner-two-description,
+.banner-two-actions {
+  opacity: 0;
+  filter: blur(var(--scroll-reveal-blur-default, 10px));
+  transform: translate3d(0, var(--scroll-reveal-distance-default, 1.5rem), 0);
+  animation: banner-two-content-in var(--banner-two-content-duration, 900ms)
+    var(--banner-two-ease) forwards;
+  will-change: opacity, transform, filter;
+}
+
+.banner-two-eyebrow {
+  animation-delay: 160ms;
+}
+
+.banner-two-heading {
+  animation-delay: 260ms;
+}
+
+.banner-two-description {
+  animation-delay: 380ms;
+}
+
+.banner-two-actions {
+  animation-delay: 500ms;
+}
+
+.banner-two-frame {
+  opacity: 0;
+  animation: banner-two-opacity-in var(--banner-two-content-duration, 900ms)
+    var(--banner-two-ease) forwards;
+  will-change: opacity;
+}
+
+.banner-two-frame img {
+  transform: translate3d(2rem, 1.5rem, 0) scale(0.96);
+  animation:
+    banner-two-frame-image-in var(--banner-two-frame-duration, 1200ms)
+      var(--banner-two-ease) forwards,
+    banner-two-frame-float 12s ease-in-out 1300ms infinite alternate;
+  will-change: transform;
+}
+
+.banner-two-frame-primary {
+  animation-delay: 180ms;
+}
+
+.banner-two-frame-secondary {
+  animation-delay: 320ms;
+}
+
+.banner-two-frame-secondary img {
+  animation:
+    banner-two-frame-image-in var(--banner-two-frame-duration, 1200ms)
+      var(--banner-two-ease) 120ms forwards,
+    banner-two-frame-float-reverse 12s ease-in-out 1450ms infinite alternate;
+}
+
+.banner-two-hero {
+  opacity: 0;
+  animation: banner-two-opacity-in var(--banner-two-content-duration, 900ms)
+    var(--banner-two-ease) 420ms forwards;
+  will-change: opacity;
+}
+
+.banner-two-hero img {
+  transform: translate3d(1.5rem, 2rem, 0) rotate(2deg) scale(0.97);
+  animation:
+    banner-two-hero-image-in var(--banner-two-hero-duration, 1100ms)
+      var(--banner-two-ease) 420ms forwards,
+    banner-two-hero-float 7s ease-in-out 1600ms infinite alternate;
+  will-change: transform;
+}
+
+@keyframes banner-two-content-in {
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes banner-two-map-in {
+  to {
+    opacity: 0.9;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes banner-two-map-drift {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  to {
+    transform: translate3d(-1rem, 1rem, 0) scale(1.02);
+  }
+}
+
+@keyframes banner-two-opacity-in {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes banner-two-frame-image-in {
+  to {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes banner-two-frame-float {
+  from {
+    transform: translate3d(0, 0, 0) rotate(0);
+  }
+
+  to {
+    transform: translate3d(1rem, -1rem, 0) rotate(2deg);
+  }
+}
+
+@keyframes banner-two-frame-float-reverse {
+  from {
+    transform: translate3d(0, 0, 0) rotate(0);
+  }
+
+  to {
+    transform: translate3d(-1rem, 1rem, 0) rotate(-2deg);
+  }
+}
+
+@keyframes banner-two-hero-image-in {
+  to {
+    transform: translate3d(0, 0, 0) rotate(0) scale(1);
+  }
+}
+
+@keyframes banner-two-hero-float {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(0, -0.75rem, 0);
+  }
+}
+
+.banner-three-section {
+  --banner-three-duration: var(--scroll-reveal-duration-default, 900ms);
+  --banner-three-ease: var(
+    --scroll-reveal-easing,
+    cubic-bezier(0.22, 1, 0.36, 1)
+  );
+}
+
+.banner-three-map {
+  opacity: 0;
+  filter: blur(var(--scroll-reveal-blur-default, 10px));
+  scale: 1.04;
+  animation:
+    banner-three-map-in var(--banner-three-duration) var(--banner-three-ease)
+      120ms forwards,
+    banner-three-map-drift 18s ease-in-out 1400ms infinite alternate;
+  will-change: opacity, filter, scale;
+}
+
+.banner-three-gradient {
+  opacity: 0;
+  filter: blur(18px);
+  rotate: -1deg;
+  scale: 0.96;
+  animation:
+    banner-three-gradient-in var(--banner-three-duration)
+      var(--banner-three-ease) forwards,
+    banner-three-gradient-drift 16s ease-in-out 1400ms infinite alternate;
+  will-change: opacity, filter, rotate, scale;
+}
+
+.banner-three-title,
+.banner-three-description,
+.banner-three-actions {
+  opacity: 0;
+  filter: blur(var(--scroll-reveal-blur-default, 10px));
+  transform: translate3d(0, var(--scroll-reveal-distance-default, 2rem), 0);
+  animation: banner-three-content-in var(--banner-three-duration)
+    var(--banner-three-ease) forwards;
+  will-change: opacity, transform, filter;
+}
+
+.banner-three-description {
+  animation-delay: 140ms;
+}
+
+.banner-three-actions {
+  animation-delay: 280ms;
+}
+
+@keyframes banner-three-map-in {
+  to {
+    opacity: 0.07;
+    filter: blur(0);
+    scale: 1;
+  }
+}
+
+@keyframes banner-three-map-drift {
+  from {
+    scale: 1;
+  }
+
+  to {
+    scale: 1.02;
+  }
+}
+
+@keyframes banner-three-gradient-in {
+  to {
+    opacity: 1;
+    filter: blur(0);
+    rotate: 0deg;
+    scale: 1;
+  }
+}
+
+@keyframes banner-three-gradient-drift {
+  from {
+    rotate: 0deg;
+    scale: 1;
+  }
+
+  to {
+    rotate: 1deg;
+    scale: 1.03;
+  }
+}
+
+@keyframes banner-three-content-in {
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.scroll-reveal-enabled [data-scroll-reveal] {
+  --scroll-reveal-delay: 0ms;
+  --scroll-reveal-duration: var(--scroll-reveal-duration-default, 900ms);
+  --scroll-reveal-distance: var(--scroll-reveal-distance-default, 2rem);
+
+  opacity: 0;
+  transform: translate3d(0, var(--scroll-reveal-distance), 0);
+  filter: blur(var(--scroll-reveal-blur-default, 10px));
+  transition-property: opacity, transform, filter, clip-path;
+  transition-duration: var(--scroll-reveal-duration);
+  transition-delay: var(--scroll-reveal-delay);
+  transition-timing-function: var(
+    --scroll-reveal-easing,
+    cubic-bezier(0.22, 1, 0.36, 1)
+  );
+  will-change: opacity, transform, filter, clip-path;
+}
+
+.scroll-reveal-enabled [data-scroll-reveal].is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+  filter: blur(0);
+  clip-path: inset(0 0 0 0);
+}
+
+.scroll-reveal-enabled [data-scroll-reveal="fade-up"] {
+  filter: blur(0);
+}
+
+.scroll-reveal-enabled [data-scroll-reveal="blur-up"] {
+  --scroll-reveal-distance: 1.5rem;
+}
+
+.scroll-reveal-enabled [data-scroll-reveal="slide-left"] {
+  transform: translate3d(var(--scroll-reveal-distance), 0, 0);
+  filter: blur(0);
+}
+
+.scroll-reveal-enabled [data-scroll-reveal="slide-right"] {
+  transform: translate3d(calc(var(--scroll-reveal-distance) * -1), 0, 0);
+  filter: blur(0);
+}
+
+.scroll-reveal-enabled [data-scroll-reveal="zoom-in"] {
+  transform: translate3d(0, 1rem, 0) scale(0.94);
+}
+
+.scroll-reveal-enabled [data-scroll-reveal="mask-left"] {
+  clip-path: inset(0 100% 0 0);
+  transform: translate3d(-1rem, 0, 0);
+  filter: blur(0);
+}
+
+.scroll-reveal-enabled [data-scroll-reveal="mask-right"] {
+  clip-path: inset(0 0 0 100%);
+  transform: translate3d(1rem, 0, 0);
+  filter: blur(0);
+}
+
+.scroll-reveal-enabled [data-scroll-reveal="image-clip"] {
+  clip-path: inset(8% 8% 8% 8% round 1rem);
+  transform: translate3d(0, 2rem, 0) scale(1.04);
+}
+
+.scroll-reveal-enabled [data-scroll-reveal="skill-line"] {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+.animations-disabled .banner-text-reveal,
+.animations-disabled .banner-one-title-wrap,
+.animations-disabled .banner-one-title-wrap::after,
+.animations-disabled .banner-one-title,
+.animations-disabled .banner-one-copy-wrap,
+.animations-disabled .banner-one-description,
+.animations-disabled .banner-one-actions,
+.animations-disabled .banner-one-dot-field,
+.animations-disabled .banner-one-image-stage,
+.animations-disabled .banner-one-image,
+.animations-disabled .banner-one-image-dot,
+.animations-disabled .banner-one-customers,
+.animations-disabled .banner-two-map,
+.animations-disabled .banner-two-eyebrow,
+.animations-disabled .banner-two-heading,
+.animations-disabled .banner-two-description,
+.animations-disabled .banner-two-actions,
+.animations-disabled .banner-two-frame,
+.animations-disabled .banner-two-frame img,
+.animations-disabled .banner-two-hero,
+.animations-disabled .banner-two-hero img,
+.animations-disabled .banner-three-title,
+.animations-disabled .banner-three-description,
+.animations-disabled .banner-three-actions,
+.animations-disabled [data-scroll-reveal] {
+  opacity: 1 !important;
+  transform: none !important;
+  filter: none !important;
+  clip-path: none !important;
+  animation: none !important;
+  transition: none !important;
+}
+
+.animations-disabled .banner-one-title-wrap::after {
+  display: none !important;
+}
+
+.animations-disabled .banner-three-map,
+.animations-disabled .banner-three-gradient {
+  filter: none !important;
+  rotate: 0deg !important;
+  scale: 1 !important;
+  animation: none !important;
+  transition: none !important;
+}
+
+.animations-disabled .banner-three-map {
+  opacity: 0.07 !important;
+}
+
+.animations-disabled .banner-three-gradient {
+  opacity: 1 !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .banner-text-reveal,
+  .banner-one-title-wrap,
+  .banner-one-title-wrap::after,
+  .banner-one-title,
+  .banner-one-copy-wrap,
+  .banner-one-description,
+  .banner-one-actions,
+  .banner-one-dot-field,
+  .banner-one-image-stage,
+  .banner-one-image,
+  .banner-one-image-dot,
+  .banner-one-customers,
+  .banner-two-map,
+  .banner-two-eyebrow,
+  .banner-two-heading,
+  .banner-two-description,
+  .banner-two-actions,
+  .banner-two-frame,
+  .banner-two-frame img,
+  .banner-two-hero,
+  .banner-two-hero img,
+  .banner-three-title,
+  .banner-three-description,
+  .banner-three-actions,
+  [data-scroll-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    clip-path: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .banner-one-title-wrap::after {
+    display: none !important;
+  }
+
+  .banner-three-map,
+  .banner-three-gradient {
+    filter: none !important;
+    rotate: 0deg !important;
+    scale: 1 !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .banner-three-map {
+    opacity: 0.07 !important;
+  }
+
+  .banner-three-gradient {
+    opacity: 1 !important;
+  }
+}

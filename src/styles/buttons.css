@@ -1,0 +1,176 @@
+/* ====================================================== */
+/* Button Style */
+/* ====================================================== */
+
+@utility btn {
+  @apply relative inline-block overflow-hidden rounded-lg px-6 py-5 leading-tight font-medium whitespace-nowrap text-white capitalize duration-300 disabled:cursor-not-allowed;
+}
+@utility btn-sm {
+  @apply px-10 py-3;
+}
+@utility btn-md {
+  @apply px-10 py-4 md:text-lg xl:px-12;
+}
+
+@utility btn-light {
+  @apply bg-theme-light text-dark;
+}
+
+@utility btn-white {
+  @apply text-dark bg-white;
+}
+@utility btn-primary {
+  @apply bg-primary;
+}
+@utility btn-black {
+  @apply bg-theme-dark text-white;
+}
+
+/* Button Text Variant */
+@utility btn-text {
+  @apply text-primary;
+}
+.btn-text {
+  .icons-wrapper {
+    @apply ms-2 inline-flex min-h-[.8em] min-w-[1.2em] items-center justify-center;
+    .icon {
+      @apply flex items-center justify-center text-xl;
+    }
+  }
+}
+
+/* Button Outline Variant */
+@utility btn-outline {
+  @apply text-text-default border;
+}
+@utility btn-outline-white {
+  @apply text-text-default border bg-white;
+}
+.btn-outline .gradient-shape {
+  @apply text-text-default opacity-30;
+}
+
+.has-icon {
+  @apply flex items-center gap-2.5;
+  svg {
+    @apply text-xl;
+  }
+}
+
+/* Button Animation */
+.magnetic-hover-anim:not([disabled="true"]) {
+  transition: transform 0.2s ease;
+  will-change: transform;
+}
+.creative-hover-anim:not([disabled="true"]) {
+  @apply relative z-10 overflow-hidden delay-100;
+
+  .hover-bg {
+    @apply translate-centered absolute top-(--creative-hover-top) left-(--creative-hover-left) -z-10 block h-0 w-0 rounded-full;
+    transition:
+      width 0.7s ease,
+      height 0.7s ease;
+  }
+
+  &:hover .hover-bg {
+    width: 56.25rem;
+    height: 56.25rem;
+  }
+
+  &.btn-primary .hover-bg {
+    @apply bg-theme-dark;
+  }
+  &.btn-outline .hover-bg {
+    background: var(--color-primary);
+  }
+  &:hover {
+    &.btn-outline {
+      color: var(--color-white) !important;
+    }
+  }
+}
+.text-flip-hover-anim:not([disabled="true"]) {
+  .text-flip-inner {
+    @apply relative block overflow-hidden text-transparent;
+
+    &::before,
+    &::after {
+      content: attr(data-content);
+      @apply pointer-events-none absolute inset-0 text-center transition-all duration-300 ease-in-out;
+    }
+
+    &::before {
+      @apply top-0 opacity-100;
+    }
+
+    &::after {
+      @apply top-full opacity-0;
+    }
+  }
+
+  &:hover .text-flip-inner {
+    &::before {
+      @apply -top-full opacity-0;
+    }
+
+    &::after {
+      @apply top-0 opacity-100;
+    }
+  }
+
+  &.btn-outline,
+  &.btn-white,
+  &.btn-light,
+  &.btn-outline-white,
+  &.btn-text {
+    .text-flip-inner {
+      &::before,
+      &::after {
+        @apply text-dark;
+      }
+    }
+  }
+
+  &.btn-primary,
+  &.btn-black {
+    .text-flip-inner {
+      &::before,
+      &::after {
+        @apply text-white;
+      }
+    }
+  }
+}
+.has-icon-moving-animation {
+  /* @apply overflow-hidden; */
+  &:hover .icon {
+    &.icon-before {
+      @apply inset-s-full -top-full;
+    }
+
+    &.icon-after {
+      @apply inset-s-0 top-0;
+    }
+  }
+
+  .icons-wrapper {
+    @apply relative overflow-hidden;
+  }
+
+  .icon {
+    @apply transition-[top,left] duration-500 ease-in-out;
+
+    &.icon-before,
+    &.icon-after {
+      @apply absolute inset-0 size-full;
+    }
+
+    &.icon-before {
+      @apply top-0;
+    }
+
+    &.icon-after {
+      @apply -inset-s-full top-full;
+    }
+  }
+}
