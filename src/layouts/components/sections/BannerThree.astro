@@ -22,11 +22,11 @@ const actualContent = overrideObjects(
 
 const { title, description, gradientBackgroundImage, mapImage, buttons } =
   actualContent;
-const backgroundImage = mapImage || "/images/banner/map.png";
+const backgroundImage = mapImage || "/images/banner/map.svg";
 ---
 
 <section class="banner-three-section bg-theme-dark relative overflow-hidden">
-  <div class="section-spacing-lg-vertical container">
+  <div class="container py-44">
     {
       backgroundImage && (
         <OptimizedImage
@@ -34,6 +34,7 @@ const backgroundImage = mapImage || "/images/banner/map.png";
           alt="map"
           aria-hidden="true"
           loading="eager"
+          fetchpriority="high"
           class="banner-three-map has-no-interaction lg:translate-centered absolute z-10 w-255 opacity-7 max-lg:bottom-0 max-lg:left-0"
         />
       )
