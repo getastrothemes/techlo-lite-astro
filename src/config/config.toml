@@ -61,7 +61,9 @@
 
   # docs - https://formspree.io/ | https://formsubmit.co/ | https://docs.netlify.com/forms/setup/
   # Form action URL for the contact form (For more settings related to form see "src/content/sections/contact-section.md")
-  contactFormAction = "https://formsubmit.co/temp.gats@gmail.com" # https://formspree.io/f/kweoweo | https://formsubmit.co/your@email.com | "/"
+  # Set this to your own endpoint before you deploy. Submissions go wherever it points (see "Contact Form Setup" in the README).
+  # formsubmit.co: "https://formsubmit.co/your_email@example.com" | formspree: "https://formspree.io/f/your_form_id" | netlify: "/"
+  contactFormAction = "https://formsubmit.co/your_email@example.com"
   # formspree | formsubmit.co | netlify (default is formsubmit.co)
   contactFormProvider = "formsubmit.co"
 

@@ -640,6 +640,7 @@ const defaultErrorMessage = messageContent.error || formI18n.submissionFallback;
               break;
             case "formspree":
               await formspreeSubmit(
+                action,
                 Object.fromEntries(new FormData(form).entries()),
                 5000,
                 form,
