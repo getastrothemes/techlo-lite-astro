@@ -105,7 +105,10 @@
     enable            = true # Enables or disable the subscription form
     title             = "" # Check src/i18n/en.json and src/i18n/fr.json for changing the title in different languages or directly add value here if you are not using internationalization feature
     note              = "" # Check src/i18n/en.json and src/i18n/fr.json for changing the note in different languages or directly add value here if you are not using internationalization feature
-    formAction        = "https://gmail.us11.list-manage.com/subscribe/post?u=d870b06d86c16269e4b1f9b39&amp;id=12cf0c6ac2&amp;f_id=007e61e1f0"
+    # PLACEHOLDER: replace with your own Mailchimp list URL before deploying. In Mailchimp, open
+    # Audience > Signup forms > Embedded forms and copy the <form action="..."> URL from the embed code.
+    # The embed code writes "&amp;" between parameters: change each one to a plain "&" here.
+    formAction        = "https://your-account.us1.list-manage.com/subscribe/post?u=YOUR_USER_ID&id=YOUR_LIST_ID&f_id=YOUR_FORM_ID"
     mailchimpTagValue = ""
 
 
